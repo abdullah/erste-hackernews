@@ -1,0 +1,66 @@
+{
+  "name": "erste-hackernews",
+  "version": "0.0.1",
+  "private": false,
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dashboard -t 'Erste hacker news' -- webpack-dev-server --colors --no-info",
+    "build": "rm -rf ./build && NODE_ENV=\"production\" webpack",
+    "lint-break-on-errors": "eslint ./source/js ./webpack.config.js -f table --ext .js --ext .jsx",
+    "lint": "eslint ./source/js ./webpack.config.js -f table --ext .js --ext .jsx || true",
+    "preview": "NODE_ENV=\"production\" webpack-dashboard -t 'Erste hacker news preview mode' -- webpack-dev-server"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.5.3",
+    "babel-core": "^6.7.2",
+    "babel-eslint": "^7.1.0",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-syntax-decorators": "^6.13.0",
+    "babel-plugin-transform-class-properties": "^6.6.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-runtime": "^6.6.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "babel-runtime": "^6.6.1",
+    "css-loader": "0.14.5",
+    "eslint": "^3.10.1",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "extract-text-webpack-plugin": "^2.0.0",
+    "file-loader": "^0.9.0",
+    "html-webpack-plugin": "^2.24.1",
+    "node-sass": "^3.13.0",
+    "postcss-loader": "^1.1.1",
+    "prepush": "^3.1.11",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^2.2.1",
+    "webpack-dashboard": "^0.2.0",
+    "webpack-dev-server": "^2.2.1"
+  },
+  "dependencies": {
+    "erste": "^1.2.9"
+  },
+  "description": "erste.js demo",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/abdullah/erste-hackernews.git"
+  },
+  "keywords": [
+    "erste",
+    "ertejs",
+    "demo"
+  ],
+  "author": "Abdullah",
+  "bugs": {
+    "url": "https://github.com/abdullah/erste-hackernews/issues"
+  },
+  "homepage": "https://github.com/abdullah/erste-hackernews#readme",
+  "prepush": [
+    "npm run lint-break-on-errors --silent"
+  ]
+}
